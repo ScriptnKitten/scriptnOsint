@@ -1,8 +1,8 @@
 #!/bin/bash
 #OSINT via a name
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/1/19
-#format: osintName.sh <firstName> <lastName>
+#Last Update: 10/2/19
+#format: osintName <firstName> <lastName>
 #note: middle name intentionally excluded
 #note: location intentionally excluded
 
@@ -27,7 +27,7 @@ s5="https://www.intelius.com/people-search/"$first"-"$last"?fullname="$first"%20
 #JohnDoe
 s6="https://johndoe.com/people/"$first"-"$last
 
-#peekyou
+#PeekYou
 s7="https://peekyou.com/"$first"_"$last
 
 #PeopleFinder
@@ -51,27 +51,48 @@ s13="https://www.truepeoplesearch.com/results?name="$first"%20"$last
 #TruthFinder
 s14="https://www.truthfinder.com/results/?firstName="$first"&lastName="$last"&city=&state=ALL"
 
+#WebMii
+s15="https://webmii.com/people?n=%22"$first"%20"$last"%22"
+
 #Whitepages
-s15="https://www.whitepages.com/name/"$first"-"$last"?q="$first"+"$last
+s16="https://www.whitepages.com/name/"$first"-"$last"?q="$first"+"$last
 
 #yasni
-s16="http://www.yasni.com/"$first"+"$last"/check+people?sh"
+s17="http://www.yasni.com/"$first"+"$last"/check+people?sh"
 
 #ZabaSearch
-s17="https://www.zabasearch.com/people/"$first"+"$last"/"
+s18="https://www.zabasearch.com/people/"$first"+"$last"/"
+
+#_____________________Sites in Progress_________________________#
+
+#findPeopleSearch
+s19="https://www.findpeoplesearch.com/"
+#results are good, but input is troublesome included for manual input
+
+#Dorking Failed Initial Attempts - will add later
+
+#Facebook
+g1=$first"%20"$last"%20site:Facebook.com"
+
+#LinkedIn
+g2=$first"%20"$last"%20site:LinkedIn.com"
+
+#Twitter
+g3=$first"%20"$last"%20site:Twitter.com"
 
 #_______________________________________________________________#
-#Sites in Progress:
-
-#findPeopleSearch (WIP)
-s18="https://www.findpeoplesearch.com/"
-
-#_______________________________________________________________#
-for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
 do
 	tempString='s'$i
 	fString+=$" -new-tab -url "
 	fString+=${!tempString}
 done
 
-firefox $fString
+#for i in 1 2 3
+#do
+#	tempString='g'$i
+#	fString+=$" -new-tab -search "
+#	fString+=${!tempString}
+#done
+
+firefox -private $fString

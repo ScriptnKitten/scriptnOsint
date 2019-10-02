@@ -1,10 +1,10 @@
 #!/bin/bash
-#OSINT via Username
+#OSINT via Twitter
 #By: Jessica Ackerman @ScriptnKitten
 #Last Update: 10/2/19
-#format: osintUsername <username>
+#format: osintTwitter <tUsername>
 
-user=$1
+tUsername=$1
 
 #site
 s1="url"

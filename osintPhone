@@ -1,8 +1,8 @@
 #!/bin/bash
 #OSINT via phone number
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/1/19
-#format: osintNumber.sh <phoneNumber>
+#Last Update: 10/2/19
+#format: osintNumber <phoneNumber>
 #note:phone number presented as just numbers and no additional characters
 
 phone=$1
@@ -30,4 +30,4 @@ do
         fString+=${!tempString}
 done
 
-firefox $fString
+firefox -private $fString

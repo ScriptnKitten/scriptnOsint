@@ -1,6 +1,9 @@
 #!/bin/bash
 #osint script aggregator script
 #runs all osint scripts created (or that's the goal)
+#By: Jessica Ackerman @ScriptnKitten
+#Last Update: 10/2/19
+
 
 breakVar=0
 while [ -n "$1" ]; do
@@ -19,11 +22,12 @@ while [ -n "$1" ]; do
 		echo "Usage: osint [OPTION]... [VALUE]..."
 		echo "Performs surface level OSINT based on the given parameters."
 		echo "	-e		OSINT via email"
-		echo "	-f		OSINT via facebook user url"
+		echo "	-f		OSINT via Facebook user url"
 		echo "	-h		display this help"
-		echo "	-i		OSINT via instagram user"
+		echo "	-i		OSINT via Instagram user"
 		echo "	-n		OSINT via first and last name"
 		echo "	-p		OSINT via phone number"
+		echo "	-t		OSINT via Twitter user"
 		echo "	-u		OSINT via username"
 		break
 		;;
@@ -34,15 +38,23 @@ while [ -n "$1" ]; do
 	-n) 
 		first="$2"
 		last="$3"
-		shift		 
-		shift
+		shift	
+		if [[ ! $last == -* ]]; then
+			shift
+		else
+			last=" "
+		fi
 		;;
 	-p) 
 		phone="$2"
 		shift
 		;;
+	-t)
+		tUser="$2"
+		shift
+		;;
 	-u) 
-		user="$2"
+		username="$2"
 		shift
 		;;
 	--)
@@ -80,12 +92,16 @@ if [ ! $breakVar = 1 ]; then
 		paraString[4]+="./osintPhone $phone"
 		echo running: "${paraString[4]}"
 	fi
-	if [ ! $user = NULL ]; then
-		paraString[5]+="./osintUsername $user"
+	if [ ! $tUser = NULL ]; then
+		paraString[5]+="./osintTwitter $tUser"
 		echo running: "${paraString[5]}"
+	fi
+	if [ ! $username = NULL ]; then
+		paraString[6]+="./osintUsername $username"
+		echo running: "${paraString[6]}"
 	fi
 
 	#para.sh used for parallel instances of firefox so we can open each type of search in a new window
-	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" 2>&1>/dev/null
+	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" "${paraString[6]}" 2>&1>/dev/null
 fi
 

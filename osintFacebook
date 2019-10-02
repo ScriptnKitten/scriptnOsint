@@ -1,8 +1,8 @@
 #!/bin/bash
 #OSINT via Facebook
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/1/19
-#format: osintFacebook.sh <facebookUserUrl>
+#Last Update: 10/2/19
+#format: osintFacebook <facebookUserUrl>
 
 rul=$1
 
@@ -20,5 +20,5 @@ do
         fString+=${!tempString}
 done
 
-firefox $fString
+firefox -private $fString
 

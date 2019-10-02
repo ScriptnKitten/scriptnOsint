@@ -1,30 +1,29 @@
 Made for my own uses, although suggestions of additions appreciated
 
-DM me at @ScriptnKitten on Twitter
-
-Use is for surface level OSINT
-
-Usage: osint [OPTION]... [VALUE]...
+	DM me at @ScriptnKitten on Twitter
 
 Performs surface level OSINT based on the given parameters.
 
-        -e              OSINT via email
+Usage: osint [OPTION]... [VALUE]...
 
-        -f              OSINT via facebook user url
+	-e              OSINT via email
 
-        -h              display this help
+        -f              OSINT via Facebook user url
 
-        -i              OSINT via instagram user
+        -h              display help
+
+        -i              OSINT via Instagram user
 
         -n              OSINT via first and last name
 
         -p              OSINT via phone number
 
-        -u              OSINT via username
+        -t              OSINT via Twitter user
 
+        -u              OSINT via username
 	
 Suggested alias:
 
-alias osint='cd <path to parent directory>/osint;./osint'
+	alias osint='cd yourPathToDirectory/osint;./osint'
 
 Credits: para.sh via stackoverflow user noted in para.sh
