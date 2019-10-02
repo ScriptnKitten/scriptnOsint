@@ -1,0 +1,33 @@
+#!/bin/bash
+#OSINT via phone number
+#By: Jessica Ackerman @ScriptnKitten
+#Last Update: 10/1/19
+#format: osintNumber.sh <phoneNumber>
+#note:phone number presented as just numbers and no additional characters
+
+phone=$1
+
+#411.com
+s1="https://www.411.com/phone/"$phone
+
+#peekyou.com
+s3="https://www.peekyou.com/phone/"$phone
+
+#TruePeopleSearch.com
+s2="https://www.truepeoplesearch.com/results?phoneno="$phone
+
+#whitepages.com
+s4="https://www.whitepages.com/phone/"$phone
+
+#_______________________________________________________________#
+#Sites in Progress:
+
+#_______________________________________________________________#
+for i in 1 2 3 4
+do
+        tempString='s'$i
+        fString+=$" -new-tab -url "
+        fString+=${!tempString}
+done
+
+firefox $fString

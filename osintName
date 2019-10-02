@@ -1,0 +1,77 @@
+#!/bin/bash
+#OSINT via a name
+#By: Jessica Ackerman @ScriptnKitten
+#Last Update: 10/1/19
+#format: osintName.sh <firstName> <lastName>
+#note: middle name intentionally excluded
+#note: location intentionally excluded
+
+first=$1
+last=$2
+
+#411
+s1="https://www.411.com/name/"$first"-"$last"?q="$first"+"$last
+
+#AdvancedBackgroundCheck
+s2="https://www.advancedbackgroundchecks.com/names/"$first"-"$last
+
+#FamilyTreeNow
+s3="https://www.familytreenow.com/search/genealogy/results?first="$first"&last="$last
+
+#FastPeopleSearch
+s4="https://www.fastpeoplesearch.com/name/"$first"-"$last
+
+#Intelius
+s5="https://www.intelius.com/people-search/"$first"-"$last"?fullname="$first"%20"$last
+
+#JohnDoe
+s6="https://johndoe.com/people/"$first"-"$last
+
+#peekyou
+s7="https://peekyou.com/"$first"_"$last
+
+#PeopleFinder
+s8="https://www.peoplefinder.com/people-search/"$first"-"$last"/"
+
+#PeopleFinders
+s9="https://www.peoplefinders.com/people/"$first"-"$last
+
+#Radaris
+s10="https://radaris.com/p/"$first"/"$last"/"
+
+#Spokeo
+s11="https://www.spokeo.com/"$first"-"$last"?loaded=1"
+
+#That'sThem
+s12="https://thatsthem.com/name/"$first"-"$last
+
+#TruePeopleSearch
+s13="https://www.truepeoplesearch.com/results?name="$first"%20"$last
+
+#TruthFinder
+s14="https://www.truthfinder.com/results/?firstName="$first"&lastName="$last"&city=&state=ALL"
+
+#Whitepages
+s15="https://www.whitepages.com/name/"$first"-"$last"?q="$first"+"$last
+
+#yasni
+s16="http://www.yasni.com/"$first"+"$last"/check+people?sh"
+
+#ZabaSearch
+s17="https://www.zabasearch.com/people/"$first"+"$last"/"
+
+#_______________________________________________________________#
+#Sites in Progress:
+
+#findPeopleSearch (WIP)
+s18="https://www.findpeoplesearch.com/"
+
+#_______________________________________________________________#
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
+do
+	tempString='s'$i
+	fString+=$" -new-tab -url "
+	fString+=${!tempString}
+done
+
+firefox $fString
