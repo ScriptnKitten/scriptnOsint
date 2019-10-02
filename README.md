@@ -27,3 +27,23 @@ Suggested alias:
 	alias osint='cd yourPathToDirectory/osint;./osint'
 
 Credits: para.sh via stackoverflow user noted in para.sh
+
+Currently Working: 
+
+	name:		17 automatic + 1 manual input
+
+	phone:		4 automatic
+
+Upcoming plans:
+
+	phone:		add more
+
+	email:		start
+
+	username:	start
+
+	instagram:	start
+
+	facebook:	start
+
+	twitter:	start
