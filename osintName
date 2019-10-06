@@ -1,7 +1,7 @@
 #!/bin/bash
 #OSINT via a name
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
+#Last Update: 10/6/19
 #format: osintName <firstName> <lastName>
 #note: middle name intentionally excluded
 #note: location intentionally excluded
