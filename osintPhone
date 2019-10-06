@@ -4,7 +4,7 @@
 #Last Update: 10/3/19
 #format: osintNumber <phoneNumber>
 #note: phone number presented as just numbers and no additional characters
-#note: script should handle any numbers lengths 10-13, but sites may not support searching in areas outside the US
+#note: script should handle any numbers lengths 10-13, but sites may not search in areas outside the US* 
 
 phone=$1
 
@@ -31,35 +31,37 @@ else if [ "$l" = "13" ]; then
 	d=$(echo -n $phone | cut -b 10-13)
 fi; fi; fi; fi
 
+#_______________________________________________________________#
 #411
 s1="https://www.411.com/phone/"$phone
 
 #Facebook
+s2="https://www.facebook.com/search/top/?q="$phone"&epa=SEARCH_BOX"
 
 #infotracer
-s2="https://infotracer.com/phone-lookup/results/?phone="$phone
+s3="https://infotracer.com/phone-lookup/results/?phone="$phone
 
 #PeekYou
-s3="https://www.peekyou.com/phone/"$phone
+s4="https://www.peekyou.com/phone/"$phone
 
 #That's Them
-s4="https://thatsthem.com/phone/"$b"-"$c"-"$d
+s5="https://thatsthem.com/phone/"$b"-"$c"-"$d
 
 #TruePeopleSearch
-s5="https://www.truepeoplesearch.com/results?phoneno="$phone
+s6="https://www.truepeoplesearch.com/results?phoneno="$phone
 
 #USPhonebook
-s6="https://www.usphonebook.com/"$b"-"$c"-"$d
+s7="https://www.usphonebook.com/"$b"-"$c"-"$d
 
 #Whitepages
-s7="https://www.whitepages.com/phone/"$phone
+s8="https://www.whitepages.com/phone/"$phone
 
 #_______________________________________________________________#
-for i in 1 2 3 4 5 6 7
+for i in 1 2 3 4 5 6 7 8
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
         fString+=${!tempString}
 done
 
-firefox -private $fString
+firefox -private $fString 2>&1>/dev/null
