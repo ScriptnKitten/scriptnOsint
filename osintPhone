@@ -44,20 +44,32 @@ s3="https://infotracer.com/phone-lookup/results/?phone="$phone
 #PeekYou
 s4="https://www.peekyou.com/phone/"$phone
 
+#Spokeo
+s5="https://www.spokeo.com/"$phone
+
+#Sync.Me
+s6="https://sync.me/search/?number="$phone
+
 #That's Them
-s5="https://thatsthem.com/phone/"$b"-"$c"-"$d
+s7="https://thatsthem.com/phone/"$b"-"$c"-"$d
 
 #TruePeopleSearch
-s6="https://www.truepeoplesearch.com/results?phoneno="$phone
+s8="https://www.truepeoplesearch.com/results?phoneno="$phone
 
 #USPhonebook
-s7="https://www.usphonebook.com/"$b"-"$c"-"$d
+s9="https://www.usphonebook.com/"$b"-"$c"-"$d
 
 #Whitepages
-s8="https://www.whitepages.com/phone/"$phone
+s10="https://www.whitepages.com/phone/"$phone
+
+#WhoCallsMe
+s11="https://whocallsme.com/Phone-Number.aspx/"$phone
+
+#ZabaSearch
+s12="https://zabasearch.com/phone/"$phone
 
 #_______________________________________________________________#
-for i in 1 2 3 4 5 6 7 8
+for i in 1 2 3 4 5 6 7 8 9 10 11 12
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
