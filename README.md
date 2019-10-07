@@ -34,6 +34,8 @@ Currently Working:
 
 	phone search:		17 automatic
 
+	email search:		1 automatic + 3 manual input
+
 Upcoming plans:
 
 	email search:		start
@@ -46,7 +48,7 @@ Upcoming plans:
 
 	twitter search:		start
 
-	Fix manual input searches (currently: 1)
+	Fix manual input searches (currently: 1 name, 3 email)
 
 	Add dependency for Firefox
 
