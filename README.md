@@ -30,20 +30,24 @@ Credits: para.sh via stackoverflow user noted in para.sh
 
 Currently Working: 
 
-	name:		26 automatic + 1 manual input
+	name search:		26 automatic + 1 manual input
 
-	phone:		12 automatic
+	phone search:		17 automatic
 
 Upcoming plans:
 
-	email:		start
+	email search:		start
 
-	username:	start
+	username search:	start
 
-	instagram:	start
+	instagram search:	start
 
-	facebook:	start
+	facebook search:	start
 
-	twitter:	start
+	twitter search:		start
 
 	implement linux shell command instead of suggested alias
+
+	implement web interface
+
+	implement web hosting??
