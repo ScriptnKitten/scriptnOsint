@@ -5,19 +5,28 @@
 
 email=$1
 
-#site
-s1="url"
+#split email
+sEmail=(${email//@/ })
 
 #_______________________________________________________________#
-#Sites in Progress:
+#411
+s1="https://www.411.com/email/"
+
+#AdvancedBackgroundchecks
+s2="https://www.advancedbackgroundchecks.com/emails/"
+
+#Spokeo
+s3="https://www.spokeo.com/email-search/"
+
+#That'sThem
+s4="https://thatsthem.com/email/"$email
 
 #_______________________________________________________________#
-for i in 1
+for i in 1 2 3 4
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
         fString+=${!tempString}
 done
 
-firefox -private $fString
-
+firefox -private $fString 2>&1>/dev/null
