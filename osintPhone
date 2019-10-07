@@ -1,7 +1,7 @@
 #!/bin/bash
 #OSINT via phone number
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/6/19
+#Last Update: 10/7/19
 #format: osintNumber <phoneNumber>
 #note: phone number presented as just numbers and no additional characters
 #note: script should handle any numbers lengths 10-13, but sites may not search in areas outside the US* 
@@ -11,6 +11,7 @@ phone=$1
 #split number for sites that require additional formatting
 l=$(echo -n $phone | wc -c)
 if [ "$l" = "10" ]; then
+	a="1"
 	b=$(echo -n $phone | cut -b 1-3)
 	c=$(echo -n $phone | cut -b 4-6)
 	d=$(echo -n $phone | cut -b 7-10)
@@ -35,41 +36,56 @@ fi; fi; fi; fi
 #411
 s1="https://www.411.com/phone/"$phone
 
+#AdvancedBackgroundChecks
+s2="https://www.advancedbackgroundchecks.com/"$b"-"$c"-"$d
+
 #Facebook
-s2="https://www.facebook.com/search/top/?q="$phone"&epa=SEARCH_BOX"
+s3="https://www.facebook.com/search/top/?q="$phone"&epa=SEARCH_BOX"
+
+#FastPeopleSearch
+s4="https://www.fastpeoplesearch.com/"$b"-"$c"-"$d
 
 #infotracer
-s3="https://infotracer.com/phone-lookup/results/?phone="$phone
+s5="https://infotracer.com/phone-lookup/results/?phone="$phone
+
+#intelius
+s6="https://www.intelius.com/reverse-phone-lookup/"$phone
+
+#JohnDoe.com
+s7="https://johndoe.com/phones/"$phone
 
 #PeekYou
-s4="https://www.peekyou.com/phone/"$phone
+s8="https://www.peekyou.com/phone/"$phone
+
+#PeopleFinder
+s9="https://www.peoplefinder.com/reverse-phone-search/"$phone
 
 #Spokeo
-s5="https://www.spokeo.com/"$phone
+s10="https://www.spokeo.com/"$phone
 
 #Sync.Me
-s6="https://sync.me/search/?number="$phone
+s11="https://sync.me/search/?number="$a$b$c$d
 
 #That's Them
-s7="https://thatsthem.com/phone/"$b"-"$c"-"$d
+s12="https://thatsthem.com/phone/"$b"-"$c"-"$d
 
 #TruePeopleSearch
-s8="https://www.truepeoplesearch.com/results?phoneno="$phone
+s13="https://www.truepeoplesearch.com/results?phoneno="$phone
 
 #USPhonebook
-s9="https://www.usphonebook.com/"$b"-"$c"-"$d
+s14="https://www.usphonebook.com/"$b"-"$c"-"$d
 
 #Whitepages
-s10="https://www.whitepages.com/phone/"$phone
+s15="https://www.whitepages.com/phone/"$phone
 
 #WhoCallsMe
-s11="https://whocallsme.com/Phone-Number.aspx/"$phone
+s16="https://whocallsme.com/Phone-Number.aspx/"$phone
 
 #ZabaSearch
-s12="https://zabasearch.com/phone/"$phone
+s17="https://zabasearch.com/phone/"$phone
 
 #_______________________________________________________________#
-for i in 1 2 3 4 5 6 7 8 9 10 11 12
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
