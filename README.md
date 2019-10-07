@@ -24,7 +24,7 @@ Usage: osint [OPTION]... [VALUE]...
 	
 Suggested alias:
 
-	alias osint='cd yourPathToDirectory/osint;./osint'
+	alias osint='cd yourPathToDirectory/scriptnOsint;./osint'
 
 Credits: para.sh via stackoverflow user noted in para.sh
 
@@ -46,8 +46,14 @@ Upcoming plans:
 
 	twitter search:		start
 
+	Fix manual input searches (currently: 1)
+
+	Add dependency for Firefox
+
+	Add compatibility for Chromium?
+
 	implement linux shell command instead of suggested alias
 
-	implement web interface
+	implement web interface??
 
 	implement web hosting??
