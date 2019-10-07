@@ -2,7 +2,6 @@
 #osint script aggregator script
 #runs all osint scripts created (or that's the goal)
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 
 
 breakVar=0

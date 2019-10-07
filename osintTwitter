@@ -1,7 +1,6 @@
 #!/bin/bash
 #OSINT via Twitter
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 #format: osintTwitter <tUsername>
 
 tUsername=$1

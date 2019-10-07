@@ -1,7 +1,6 @@
 #!/bin/bash
 #OSINT via Instagram
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 #format: osintInsta <username>
 
 user=$1

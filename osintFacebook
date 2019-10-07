@@ -1,7 +1,6 @@
 #!/bin/bash
 #OSINT via Facebook
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 #format: osintFacebook <facebookUserUrl>
 
 rul=$1

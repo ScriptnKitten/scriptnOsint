@@ -1,7 +1,6 @@
 #!/bin/bash
 #OSINT via Email
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 #format: osintEmail <email>
 
 email=$1

@@ -1,7 +1,6 @@
 #!/bin/bash
 #OSINT via Username
 #By: Jessica Ackerman @ScriptnKitten
-#Last Update: 10/2/19
 #format: osintUsername <username>
 
 user=$1
