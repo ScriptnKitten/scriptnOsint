@@ -30,13 +30,11 @@ Credits: para.sh via stackoverflow user noted in para.sh
 
 Currently Working: 
 
-	name:		17 automatic + 1 manual input
+	name:		26 automatic + 1 manual input
 
-	phone:		4 automatic
+	phone:		12 automatic
 
 Upcoming plans:
-
-	phone:		add more
 
 	email:		start
 
@@ -47,3 +45,5 @@ Upcoming plans:
 	facebook:	start
 
 	twitter:	start
+
+	implement linux shell command instead of suggested alias
