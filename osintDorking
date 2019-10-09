@@ -1,0 +1,16 @@
+#!/bin/bash
+#OSINT via search dorking
+#By: Jessica Ackerman @ScriptnKitten
+#note: requires user interaction
+
+#_______________________________________________________________#
+s1="example"
+#_______________________________________________________________#
+for i in 1 
+do
+        tempString='s'$i
+        fString+=$" -new-tab -url "
+        fString+=${!tempString}
+done
+
+firefox -private $fString 2>&1>/dev/null

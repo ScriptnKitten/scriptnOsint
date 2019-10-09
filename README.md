@@ -6,6 +6,8 @@ Performs surface level OSINT based on the given parameters.
 
 Usage: osint [OPTION]... [VALUE]...
 
+	-d		OSINT via search dorking
+
 	-e              OSINT via email
 
         -f              OSINT via Facebook user url

@@ -8,6 +8,9 @@ breakVar=0
 while [ -n "$1" ]; do
 	case "$1" in
 
+	-d)
+		dorking="1"
+		;;
 	-e) 
 		email="$2"
 		shift
@@ -20,6 +23,7 @@ while [ -n "$1" ]; do
 		breakVar=1
 		echo "Usage: osint [OPTION]... [VALUE]..."
 		echo "Performs surface level OSINT based on the given parameters."
+		echo "	-d		OSINT via search dorking"
 		echo "	-e		OSINT via email"
 		echo "	-f		OSINT via Facebook user url"
 		echo "	-h		display this help"
@@ -71,36 +75,40 @@ while [ -n "$1" ]; do
 done
 
 if [ ! $breakVar = 1 ]; then
-	if [ ! $email = NULL ]; then
-		paraString[0]+="./osintEmail $email"
+	if [ ! $dorking = NULL ]; then
+		paraString[0]+="./osintDorking"
 		echo running: "${paraString[0]}"
 	fi
-	if [ ! $facebook = NULL ]; then
-		paraString[1]+="./osintFacebook $facebook"
+	if [ ! $email = NULL ]; then
+		paraString[1]+="./osintEmail $email"
 		echo running: "${paraString[1]}"
 	fi
-	if [ ! $insta = NULL ]; then
-		paraString[2]+="./osintInsta $insta"
+	if [ ! $facebook = NULL ]; then
+		paraString[2]+="./osintFacebook $facebook"
 		echo running: "${paraString[2]}"
 	fi
-	if [ ! $first = NULL ]; then
-		paraString[3]+="./osintName $first $last"
+	if [ ! $insta = NULL ]; then
+		paraString[3]+="./osintInsta $insta"
 		echo running: "${paraString[3]}"
 	fi
-	if [ ! $phone = NULL ]; then
-		paraString[4]+="./osintPhone $phone"
+	if [ ! $first = NULL ]; then
+		paraString[4]+="./osintName $first $last"
 		echo running: "${paraString[4]}"
 	fi
-	if [ ! $tUser = NULL ]; then
-		paraString[5]+="./osintTwitter $tUser"
+	if [ ! $phone = NULL ]; then
+		paraString[5]+="./osintPhone $phone"
 		echo running: "${paraString[5]}"
 	fi
-	if [ ! $username = NULL ]; then
-		paraString[6]+="./osintUsername $username"
+	if [ ! $tUser = NULL ]; then
+		paraString[6]+="./osintTwitter $tUser"
 		echo running: "${paraString[6]}"
+	fi
+	if [ ! $username = NULL ]; then
+		paraString[7]+="./osintUsername $username"
+		echo running: "${paraString[7]}"
 	fi
 
 	#para.sh used for parallel instances of firefox so we can open each type of search in a new window
-	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" "${paraString[6]}" 2>&1>/dev/null
+	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" "${paraString[6]}" "${paraString[7]}" 2>&1>/dev/null
 fi
 
