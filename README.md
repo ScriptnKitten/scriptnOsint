@@ -38,6 +38,8 @@ Currently Working:
 
 	email search:		1 automatic + 3 manual input
 
+	search dorking:		10 automatic (requires user interaction)
+
 Upcoming plans:
 
 	email search:		start
