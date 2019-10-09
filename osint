@@ -109,6 +109,6 @@ if [ ! $breakVar = 1 ]; then
 	fi
 
 	#para.sh used for parallel instances of firefox so we can open each type of search in a new window
-	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" "${paraString[6]}" "${paraString[7]}" 2>&1>/dev/null
+	./para.sh "${paraString[0]}" "${paraString[1]}" "${paraString[2]}" "${paraString[3]}" "${paraString[4]}" "${paraString[5]}" "${paraString[6]}" "${paraString[7]}"
 fi
 

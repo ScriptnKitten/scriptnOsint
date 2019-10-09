@@ -3,14 +3,31 @@
 #By: Jessica Ackerman @ScriptnKitten
 #note: requires user interaction
 
-#_______________________________________________________________#
-s1="example"
-#_______________________________________________________________#
-for i in 1 
-do
-        tempString='s'$i
-        fString+=$" -new-tab -url "
-        fString+=${!tempString}
-done
+echo "Enter the search string:"
+read input </dev/tty
+input=$(echo ${input//" "/"%20"})
 
-firefox -private $fString 2>&1>/dev/null
+#_______________________________________________________________#
+
+fString+=$" -new-tab -url https://duckduckgo.com/?q="
+fString+=$input
+fString+=$" -new-tab -url https://google.com/search?q="
+fString+=$input
+fString+=$" -new-tab -url https://bing.com/search?q="
+fString+=$input
+fString+=$" -new-tab -url https://search.yahoo.com/search?p="
+fString+=$input
+fString+=$" -new-tab -url https://yandex.com/search/?text="
+fString+=$input
+fString+=$" -new-tab -url https://www.exalead.com/search/web/results/?q="
+fString+=$input
+fString+=$" -new-tab -url https://scholar.google.com/scholar?q="
+fString+=$input
+fString+=$" -new-tab -url https://patents.google.com/?q="
+fString+=$input
+fString+=$" -new-tab -url https://news.google.com/search?q="
+fString+=$input
+fString+=$" -new-tab -url https://www.qwant.com/?q="
+fString+=$input
+
+firefox -private -new-window $fString 2>&1>/dev/null
