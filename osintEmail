@@ -9,20 +9,65 @@ email=$1
 sEmail=(${email//@/ })
 
 #_______________________________________________________________#
-#411
-s1="https://www.411.com/email/"
 
-#AdvancedBackgroundchecks
-s2="https://www.advancedbackgroundchecks.com/emails/"
+#Bing
+s1="https://www.bing.com/search?q="${sEmail[0]}"%40"${sEmail[1]}
 
-#Spokeo
-s3="https://www.spokeo.com/email-search/"
+#Dehashed
+s2="https://dehashed.com/search?query="${sEmail[0]}"%40"${sEmail[1]}
+
+#DomainBigData
+s3="https://domainbigdata.com/"${sEmail[1]}
+
+#DuckDuckGo
+s4="https://duckduckgo.com/?q="${sEmail[0]}"%40"${sEmail[1]}
+
+#Google
+s5="https://www.google.com/search?q="${sEmail[0]}"%40"${sEmail[1]}
+
+#hunter
+s6="https://hunter.io/verify/"$email
+
+#_IntelligenceX
+s7="https://intelx.io/?s="$email
+
+#Pastebin
+s8="https://pastebin.com/search?q="$email
+
+#SecurityTrails
+s9="https://securitytrails.com/domain/"${sEmail[1]}"/dns"
+
+#Shodan
+s10="https://www.shodan.io/search?query="${sEmail[1]}
+
+#Spytox
+s11="https://www.spytox.com/email-search/"$email
 
 #That'sThem
-s4="https://thatsthem.com/email/"$email
+s12="https://thatsthem.com/email/"$email
 
 #_______________________________________________________________#
-for i in 1 2 3 4
+
+#411
+s13="https://www.411.com/email/"
+
+#AdvancedBackgroundchecks
+s14="https://www.advancedbackgroundchecks.com/emails/"
+
+#AnalyzeID
+s15="http://analyzeid.com/"
+
+#HaveIBeenPwned
+s16="https://haveibeenpwned.com"
+
+#PSBDMP
+s17="https://psbdmp.ws//"
+
+#Spokeo
+s18="https://www.spokeo.com/email-search/"
+
+
+for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
