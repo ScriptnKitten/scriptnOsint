@@ -29,5 +29,7 @@ fString+=$" -new-tab -url https://news.google.com/search?q="
 fString+=$input
 fString+=$" -new-tab -url https://www.qwant.com/?q="
 fString+=$input
+fString+=$" -new-tab -url https://pastebin.com/search?q="
+fString+=$input
 
 firefox -private -new-window $fString 2>&1>/dev/null
