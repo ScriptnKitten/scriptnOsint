@@ -36,17 +36,15 @@ Currently Working:
 
 	phone search:		17 automatic
 
-	email search:		1 automatic + 3 manual input
+	email search:		12 automatic + 6 manual input
 
-	search dorking:		10 automatic (requires user interaction)
+	search dorking:		11 automatic (requires user interaction)
 
 Upcoming plans:
 
-	email search:		start
+	username search:	start	projected finish: 10/15/19
 
-	username search:	start
-
-	instagram search:	start
+	instagram search:	start	
 
 	facebook search:	start
 
