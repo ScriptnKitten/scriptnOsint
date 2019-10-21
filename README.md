@@ -7,22 +7,22 @@ Performs surface level OSINT based on the given parameters.
 Usage: osint [OPTION]... [VALUE]...
 
 	-d		OSINT via search dorking
-
+	
 	-e              OSINT via email
-
-        -f              OSINT via Facebook user url
-
-        -h              display help
-
-        -i              OSINT via Instagram user
-
-        -n              OSINT via first and last name
-
-        -p              OSINT via phone number
-
-        -t              OSINT via Twitter user
-
-        -u              OSINT via username
+	
+	-f              OSINT via Facebook user url
+	
+	-h              display help
+	
+	-i              OSINT via Instagram user
+	
+	-n              OSINT via first and last name
+	
+	-p              OSINT via phone number
+	
+	-t              OSINT via Twitter user
+	
+	-u              OSINT via username
 	
 Suggested alias:
 
@@ -40,9 +40,11 @@ Currently Working:
 
 	search dorking:		11 automatic (requires user interaction)
 
+	username search:	3 automatic
+
 Upcoming plans:
 
-	username search:	start	projected finish: 10/15/19
+	username search:	continue
 
 	instagram search:	start	
 
@@ -50,7 +52,9 @@ Upcoming plans:
 
 	twitter search:		start
 
-	Fix manual input searches (currently: 1 name, 3 email)
+	rewrite in python
+
+	Fix manual input searches (currently: 1 name, 6 email)
 
 	Add dependency for Firefox
 

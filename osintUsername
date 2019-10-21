@@ -5,19 +5,34 @@
 
 user=$1
 
-#site
-s1="url"
+#Check For Emails
+
+#Gmail
+e1=$(echo $user"@gmail.com")
+s1="https://hunter.io/verify/"$e1
+
+#Yahoo
+e2=$(echo $user"@yahoo.com")
+s2="https://hunter.io/verify/"$e2
+
+#Outlook
+e3=$(echo $user"@outlook.com")
+s3="https://hunter.io/verify/"$e3
+
+#Check For Username
+
+#HaveIBeenPwned
+
+
+
 
 #_______________________________________________________________#
-#Sites in Progress:
-
-#_______________________________________________________________#
-for i in 1
+for i in 1 2 3
 do
         tempString='s'$i
         fString+=$" -new-tab -url "
         fString+=${!tempString}
 done
 
-firefox -private $fString
+firefox -private $fString 2>&1>/dev/null
 
